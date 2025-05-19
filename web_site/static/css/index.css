@@ -1,0 +1,518 @@
+/* 版心 */
+/* 版心 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* #region 头部start */
+/* 头部 */
+.bar-header {
+    position: relative;
+    /* 相对定位 */
+    height: 100vh;
+    /* 占满整个视口 */
+}
+
+/* 导航菜单栏 */
+.menu-bar {
+    position: absolute;
+    /* 绝对定位 */
+    top: 20px;
+    /* 距离顶部 20px */
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    /* 确保导航栏在轮播图之上 */
+    color: #ffffff;
+}
+
+.menu-bar .nav-left>p {
+    font-size: 25px;
+    line-height: 15px;
+}
+
+.menu-bar .nav-right>li {
+    float: left;
+    font-size: 16px;
+    margin: 0 14px;
+}
+
+.menu-bar .nav-right li>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu-bar .nav-right li img {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+.menu-bar .nav-right li:first-child {
+    margin-left: 0px;
+}
+
+.menu-bar .nav-right li:last-child {
+    margin-right: 0px;
+}
+
+/*标题内容*/
+.title-content {
+    position: absolute;
+    width: 800px;
+    /* background-color: aqua; */
+    z-index: 2;
+    margin: 190px 25%;
+    text-align: center;
+}
+
+.title-content h1 {
+    color: #ffffff;
+}
+
+.a-content {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 60px 55px;
+}
+
+/* 轮播图 */
+.carsoule-images {
+    width: 100%;
+    height: 100vh;
+    /* 占满整个视口 */
+    position: relative;
+    /* 相对定位 */
+}
+
+.carsoule-images img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* 确保图片覆盖整个区域 */
+    filter: blur(1px) brightness(0.5);
+}
+
+/* #endregion 头部end */
+
+/* #region 关于我们start */
+.about-us {
+    width: 100%;
+    height: 700px;
+    /* background-color: #f0f0f0;  */
+    margin-top: 70px;
+    text-align: center;
+}
+
+.about-us h2 {
+    padding-bottom: 15px;
+    ;
+    border-bottom: red 5px solid;
+    display: inline-block;
+}
+
+.about-us h2,
+.introduce-list li>h5 {
+    font-weight: bold;
+}
+
+.about-us .container>p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.introduce-list {
+    margin: 50px 7%;
+}
+
+.introduce-list li {
+    float: left;
+    width: 260px;
+    height: 190px;
+}
+
+.introduce-list li>h5 {
+    margin-bottom: 10px;
+}
+
+.introduce-list li>p {
+    font-size: 16px;
+}
+
+.introduce-list li:nth-child(2),
+.introduce-list li:nth-child(5) {
+    margin: 0 100px;
+}
+
+.introduce-list li:nth-child(4),
+.introduce-list li:nth-child(5) {
+    margin-top: 30px;
+}
+
+/* #endregion 关于我们end */
+
+/* #region 成功案例start */
+.success-case {
+    text-align: center;
+    background-color: #f0f0f0;
+    height: 820px;
+}
+
+.success-case h2{
+    margin-top: 70px;
+}
+.success-case h2 {
+    padding-bottom: 15px;
+    border-bottom: red 5px solid;
+    display: inline-block;
+}
+
+.nav-case {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.success-case .nav-case li {
+    display: inline-block;
+    font-size: 15px;
+    padding: 5px 12px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #e0e0e0;
+}
+
+.case-container img {
+    width: 280px;
+}
+.case-container img:hover {
+    transform: scale(1.15);
+
+}
+.case-item{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+
+/******************AI**********************/
+/* 导航激活样式 */
+.success-case .nav-case li.active {
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+.success-case .nav-case li:hover{
+    color: #ffffff;
+    background-color: red;
+}
+
+/* 图片容器布局 - Flexbox 方案 */
+.case-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* 图片间距改为 5px */
+    margin-top: 20px;
+}
+
+/* 图片项样式 */
+.case-item {
+    flex: 0 0 calc(25% - 5px * 3 / 4);
+    /* 四列布局公式 */
+    background: white;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    /* 重要！包含 padding 在宽度内 */
+    display: none;
+}
+
+/* 默认显示全部 */
+.case-item[data-category] {
+    display: block;
+}
+
+/* 浮动布局方案 */
+.case-container.floated {
+    overflow: hidden;
+    margin-right: -5px;
+    /* 补偿最后一列的右边距 */
+}
+
+.case-container.floated .case-item {
+    float: left;
+    width: calc(25% - 5px);
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* 清除每行第四个元素的右边距 */
+.case-container.floated .case-item:nth-child(4n) {
+    margin-right: 0;
+}
+
+/* #endregion 成功案例end*/
+
+/* #region服务流程start */
+.sever-process{
+    height: 800px;
+    width: 100%;
+    height: 700px;
+    /* background-color: #f0f0f0;  */
+    margin-top: 70px;
+    text-align: center;
+}
+
+.sever-process h2 {
+    padding-bottom: 15px;
+    ;
+    border-bottom: red 5px solid;
+    display: inline-block;
+}
+
+.sever-process h2,
+.sever-list li>h5 {
+    font-weight: bold;
+}
+
+.sever-process .container>p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.sever-list li{
+    width: 260px;
+    height: 190px;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 1px 1px 10px 3px #f0f0f0 ;
+    padding: 20px;
+    margin-top: 50px;
+}
+.sever-list li>p{
+    text-align: left;
+    margin-top: 10px;
+}
+.sever-list li:nth-child(2),
+.sever-list li:nth-child(5) {
+    margin: 0 100px;
+}
+.sever-list li:nth-child(4),
+.sever-list li:nth-child(5),
+.sever-list li:nth-child(6) {
+    margin-top: 30px;
+}
+.sever-list li:hover{
+    transform: scale(1.05);
+}
+
+/* #endregion 服务流程end */
+
+/* #region 团队成员start */
+.team-member{
+    height: 800px;
+    width: 100%;
+    height: 800px;
+    background-color: #f0f0f0; 
+    margin-top: 70px;
+    text-align: center;
+}
+
+.team-member h2 {
+    padding-bottom: 15px;
+    border-bottom: red 5px solid;
+    display: inline-block;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+.team-member h2,
+.team-member .team-item h5 {
+    font-weight: bold;
+}
+
+.team-member li{
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    display: inline-block;
+    margin: 0 20px;
+}
+.team-item li:hover{
+    transform: scale(1.15);
+    box-shadow: 2px 2px 10px 3px #979797 ;
+}
+.team-item li img{
+    width: 250px;
+    height: 250px;
+}
+.team-item h5{
+    margin:15px;
+}
+.team-item li p{
+    font-size: 16px;
+}
+/* #endregion 团队成员 :end */
+
+/* #region 荣誉start */
+.honor{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: rgb(65, 57, 57);
+}
+.honor li{
+    display: inline-block;
+    margin: 60px 120px;
+}
+.honor li:first-child{
+    margin-left: 0;
+}
+.honor li:last-child{
+    margin-right: 0;
+}
+.honor li span{
+    margin-top: 20px;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
+.honor li p{
+    font-size: 15px;
+}
+.honor svg,
+.honor span,
+.honor p{
+    color: #fff;
+}
+
+/* #endregion 荣誉end */
+
+/* #region 咨询中心start */
+.consult-center{
+    width: 100%;
+    height: 900px;
+    text-align: center;
+}
+
+
+.consult-center h2 {
+    padding-bottom: 15px;
+    border-bottom: red 5px solid;
+    display: inline-block;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.consult-center h2,
+.consult-list li>h5 {
+    font-weight: bold;
+}
+.consult-center .container>p{
+    font-size: 16px;
+    margin-bottom: 100px;
+}
+
+.consult-list li{
+    float: left;
+    width: 250px;
+    height: 540px;
+    font-size: 12px;
+    margin: 0 50px;
+    box-shadow: 2px 2px 10px 3px #979797 ;
+    position: relative;
+}
+.consult-list li:nth-child(1){
+    margin-left: 115px;
+}
+.consult-list li img{
+    width: 250px;
+}
+.consult-list li h5{
+    margin-top: 25px;
+}
+.consult-list li p{
+    padding: 30px;
+    text-align: left;
+}
+.consult-list button{
+    margin-bottom: 10px;
+    position: absolute;
+    left: 32%;
+    bottom: 10px;
+}
+.consult-list li:hover{
+    transform: scale(1.05) translateY(-20px);
+}
+/* #endregion 咨询中心end */
+
+/* #region 底部start */
+.footer{
+    height: 300px;
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+}
+.footer-item h5{
+    font-size: 18px;
+    font-weight: bold;
+}
+.footer-item li{
+    float: left;
+    font-size: 16px;
+    margin: 0 60px;
+    margin-top: 50px;
+}
+.footer-item li a{
+    color: #fff;
+    padding-top: 20px;
+}
+.footer-item li:first-child{
+    text-align: left;
+    margin-right: 80px;
+}
+.footer-bottom p:first-child{
+    margin: 30px 0;
+}
+/* #endregion 底部end */
+
+/* #region 回到顶部start */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 30%;
+    z-index: 10;
+    padding: 20px;
+}
+body.scroll #backToTopBtn {
+    display: block;
+  }
+/* #endregion 回到顶部end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
